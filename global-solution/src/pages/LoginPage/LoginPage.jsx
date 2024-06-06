@@ -1,18 +1,16 @@
 import React from 'react';
 import '/src/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import GoogleLogin from 'react-google-login';
 import { Link } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
+import jwtDecode from 'jwt-decode';
+
 
 
 function LoginPage() {
 
   function AbrirModal() {
     new bootstrap.Modal("#modal").show();
-  }
-
-  function responseGoogle(response) {
-    console.log(response);
   }
 
   return (
@@ -70,13 +68,14 @@ function LoginPage() {
                 Cadastre-se
               </button>
               <GoogleLogin
-                clientId="434430983016-7ihs61jgdc7mg13fu9o36bqg84s7k7br.apps.googleusercontent.com" // substitua pelo seu Client ID
-                buttonText="Login with Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-                id="buttonDivGoogle"
-              />
+                    onSuccess={credentialResponse => {
+                      const decoded = jwtDecode(credentialResponse.credential);
+                      console.log(decoded);
+                    }}
+                    onError={() => {
+                      console.log('Login Failed');
+                    }}
+                  />
             </form>
           </div>
           <div
@@ -136,7 +135,15 @@ function LoginPage() {
                   </button>
                 </div>
                 <div>
-
+                  <GoogleLogin
+                    onSuccess={credentialResponse => {
+                      const decoded = jwtDecode(credentialResponse.credential);
+                      console.log(decoded);
+                    }}
+                    onError={() => {
+                      console.log('Login Failed');
+                    }}
+                  />
                 </div>
                 <div id="buttonDiv" />
               </div>
