@@ -1,0 +1,386 @@
+$cor-fundo-nav : #457b9d;
+$background-color: #457b9d;
+$light-color: white;
+$dark-color: black;
+
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+.background-div-home {
+  background-color: #457b9d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Reddit Mono", monospace;
+}
+
+header {
+  display: flex;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.nav-div {
+  display: flex;
+  background-color: $cor-fundo-nav;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+  height: 48.2px;
+}
+
+.Titulo-Nav {
+  display: flex;
+  font-size: 1.5em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: $cor-fundo-nav;
+  margin-left: 8em;
+}
+
+.menu-nav {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background-color: $cor-fundo-nav;
+  position: relative;
+}
+
+.menu-nav ul {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  background-color: $cor-fundo-nav;
+  align-items: center;
+  margin-right: 20%;
+  margin-bottom: 0;
+}
+
+.menu-nav ul li {
+  margin: 0 10px;
+  background-color: $cor-fundo-nav;
+}
+
+.menu-nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  background-color: $cor-fundo-nav;
+}
+
+.menu-nav a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-nav a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.slider-background {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 5s ease-in-out;
+}
+
+.titulo-pagina {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  margin: 0 0;
+  font-size: 2em;
+  text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.quem-somos-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.3em;
+  margin: 2em 0;
+}
+
+.container-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d3557;
+  padding: 10px;
+  max-height: 450px;
+  max-width: 900px; // Defina a largura máxima que você deseja para o contêiner
+  margin: 5% 12%; // Isso centraliza o contêiner
+}
+
+.container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d3557;
+  padding: 10px;
+  max-height: 450px;
+  max-width: 900px; // Defina a largura máxima que você deseja para o contêiner
+  margin-left: 40%; // Isso centraliza o contêiner
+}
+
+.responsive-square {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+
+  // img {
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
+}
+.responsive-square2 {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  
+}
+
+#title-solucao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.3em;
+  margin: 2em 0;
+
+}
+
+#span-space {
+  padding: .3em;
+}
+
+#title-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.3em;
+  margin: 2em 0;
+}
+
+.text-content {
+  width: 50%;
+  padding-left: 10px;
+  color: $light-color;
+}
+
+// Pagina de Login 
+
+.login-page {
+  background-color: $light-color;
+}
+
+.titulo-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.3em;
+  margin: 2em 0;
+}
+
+.login-forms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-color;
+  padding: 10px;
+  margin-left: 39%;
+  max-width: 42%;
+}
+
+.login-forms button {
+  width: 20%;
+  margin-right: 2%;
+}
+
+#buttonDivGoogle {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 0;
+}
+
+// Pagina de Contato
+
+.contact-page {
+  background-color: $light-color;
+}
+
+.title-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.3em;
+  margin: 2em 0;
+
+}
+
+.contact-forms {
+  justify-content: center;
+  align-items: center;
+  background-color: $light-color;
+  padding: 10px;
+  max-height: 450px;
+  margin: 0 28.5%
+}
+
+#btn-menu {
+  display: none;
+
+}
+
+// Media Query
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+    max-width: 80%;
+    margin: 1% 10%,;
+  }
+
+  .container-2 {
+    flex-direction: column-reverse;
+    max-width: 80%;
+    margin: 1% 10%,;
+  }
+
+  #title-solucao {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  #title-container2 {
+    margin-top: 10%;
+  }  
+
+
+}
+
+@media (max-width: 768px) {
+  .menu-nav ul {
+    display: none;
+    position: absolute;
+    top: 3.2rem;
+    background-color: $cor-fundo-nav;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .menu-nav.active ul {
+    display: block;
+    background-color: $cor-fundo-nav;
+
+  }
+  
+  .menu-nav.active ul li {
+    display: block;
+    background-color: $cor-fundo-nav;
+  }
+
+  .menu-nav.active ul li a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .login-forms {
+    margin-left: 30%;
+  }
+
+
+  #btnEntrar {
+    width: 100%;
+  }
+  #btnCadastrar {
+    width: 100%;
+  }
+  #buttonDivGoogle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #btn-menu {
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: $light-color;
+    gap: .5rem;
+  }
+
+  #hamburguer {
+    display: block;
+    border-top: 2px solid $light-color;
+    width: 20px;
+  }
+
+  #hamburguer::after, #hamburguer::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-top: 5px;
+    background: $light-color;
+    transition: .5s;
+    position: relative;
+  }
+
+  .menu-nav.active #hamburguer {
+    border-top-color: transparent;
+  }
+  .menu-nav.active #hamburguer::before {
+    transform: rotate(135deg);
+  }
+  .menu-nav.active #hamburguer::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+@media screen and (max-width: 1440px){
+//   .container {
+//     margin-left: 20%;
+//   }
+
+  .container-2, .container {
+    margin-left: 20%;
+    max-width: 60%;
+  }
+
+}
