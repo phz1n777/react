@@ -16,8 +16,8 @@ function Contato() {
               <span id="hamburguer" />
             </button>
             <ul>
-            <li><a><Link to="/">Home</Link></a></li>
-              <li><a>Painel</a></li>
+              <li><a><Link to="/">Home</Link></a></li>
+              <li><a><Link to="/Dashboard">Painel</Link></a></li>
               <li><a><Link to="/contato">Contato</Link></a></li>
               <li><a><Link to="/Login">Login</Link></a></li>
             </ul>

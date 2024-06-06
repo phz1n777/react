@@ -27,8 +27,8 @@ function LoginPage() {
               <span id="hamburguer" />
             </button>
             <ul>
-            <li><a><Link to="/">Home</Link></a></li>
-              <li><a>Painel</a></li>
+              <li><a><Link to="/">Home</Link></a></li>
+              <li><a><Link to="/Dashboard">Painel</Link></a></li>
               <li><a><Link to="/contato">Contato</Link></a></li>
               <li><a><Link to="/Login">Login</Link></a></li>
             </ul>
@@ -76,7 +76,7 @@ function LoginPage() {
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}
                 id="buttonDivGoogle"
-              /> 
+              />
             </form>
           </div>
           <div

@@ -261,6 +261,119 @@ body {
 
 }
 
+//Dashboard
+.body-dashboard {
+  height: 100%;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+.sidebar {
+  width: 20%;
+  background-color: $light-color;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+.sidebar a.sidebar-active {
+  border-left: 4px solid #457b9d;
+  background-color: #999;
+  color: #000;
+  font-weight: bold;
+}
+
+.sidebar h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.sidebar a{
+  text-decoration: none;
+  padding: 10px 15px;
+  color: black;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  border-left: 4px solid #457b9d;
+  background-color: #999;
+  color: #000;
+  font-weight: bold;
+}
+.content-dashboard{
+  width: 80%;
+  background-color: rgb(245,245,245);
+  padding: 20px;
+}
+
+.titulo-secao-dashboard {
+  border-radius: 10px;
+  background-color: $light-color;
+  padding: 10px;
+
+}
+
+.titulo-secao-dashboard h2 {
+  font-size: 19px;
+}
+
+.titulo-secao-dashboard p {
+  font-size: 14px;
+}
+
+.box-info{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-info-single {
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ border-radius: 10px;
+ color: white;
+ margin: 0 10px;
+ padding: 30px;
+}
+
+.box-info-single .info-text p {
+  font-size: 20px;
+}
+
+.feed {
+  width: 100%;
+  height: 10%;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: $light-color;
+
+}
+.feed-single {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed-time {
+  color:#444;
+}
+
+.feed-time h3 {
+  font-size: 15px;
+}
+
+.feed-text span {
+  color: $dark-color;
+  padding-left: 10px;
+}
+  
+
 // Media Query
 
 @media (max-width: 768px) {
