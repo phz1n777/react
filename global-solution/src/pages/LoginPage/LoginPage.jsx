@@ -13,6 +13,11 @@ function LoginPage() {
     new bootstrap.Modal("#modal").show();
   }
 
+  function toggleMenu() {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.toggle('active');
+  }
+
   return (
     <>
 
@@ -20,8 +25,7 @@ function LoginPage() {
         <div className="nav-div">
           <div className="Titulo-Nav">Nav</div>
           <div className="menu-nav" id="nav-menu">
-            <button id="btn-menu">
-              Menu
+          <button id="btn-menu" onClick={toggleMenu}>Menu
               <span id="hamburguer" />
             </button>
             <ul>

@@ -484,6 +484,15 @@ body {
     transform: rotate(-135deg);
     top: -7px;
   }
+
+  .box-info {
+    flex-wrap: wrap;
+  }
+
+  .box-info-single {
+    margin: 10px 0;
+  }
+
 }
 
 @media screen and (max-width: 1440px){

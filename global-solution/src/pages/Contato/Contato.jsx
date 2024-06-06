@@ -5,14 +5,18 @@ import { Link } from 'react-router-dom';
 
 function Contato() {
 
+ function toggleMenu() {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.toggle('active');
+  }
+
   return (
     <>
       <nav>
         <div className="nav-div">
           <div className="Titulo-Nav">Navigatinho</div>
           <div className="menu-nav" id="nav-menu">
-            <button id="btn-menu">
-              Menu
+          <button id="btn-menu" onClick={toggleMenu}>Menu
               <span id="hamburguer" />
             </button>
             <ul>
