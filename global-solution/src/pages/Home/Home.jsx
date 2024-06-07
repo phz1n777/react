@@ -30,7 +30,7 @@ function Home() {
     <div className='background-div-home'>
       <nav>
         <div className="nav-div">
-          <div className="Titulo-Nav">Nav</div>
+          <div className="Titulo-Nav">Tech do Bem</div>
           <div className="menu-nav" id="nav-menu">
             <button id="btn-menu" onClick={toggleMenu}>Menu
               <span id="hamburguer" />
@@ -48,7 +48,7 @@ function Home() {
         <section className="slider-background">
           <div>
             <div className="titulo-pagina">
-              <h1>Seja bem-vindo Nome da solução</h1>
+              <h1>Seja bem-vindo a Tech do Bem</h1>
             </div>
           </div></section>
         <hr />
@@ -60,7 +60,7 @@ function Home() {
             <h1 id="title-solucao"><span id="span-space">•</span>Solução</h1>
           </div>
           <div className="text-content">
-            <p>A solução proposta é um sistema integrado de monitoramento ambiental que utiliza sensores acoplados às embarcações marinhas, um site e um aplicativo móvel para coletar, analisar e visualizar dados sobre a saúde dos oceanos.</p>
+            <p>Nosso produto é um sistema integrado de monitoramento ambiental que utiliza sensores acoplados às embarcações marinhas, um site e um aplicativo móvel para coletar, analisar e visualizar dados sobre a saúde dos oceanos.</p>
           </div>
         </div>
         <div className="container-2">
@@ -72,7 +72,22 @@ function Home() {
             <h1 id="title-container2">Objetivo<span id="span-space">•</span></h1>
           </div>
         </div>
+        <div className='box-how-work'>
+          <div className='how-work-text'>
+            <h2>Como funciona</h2>
+            <div className='how-work-p'>
+              <p>Separamos um video para mostrar a vocês como nosso dispositivo funciona.</p>
+            </div>
+            
+          </div>
+          <div className='how-work-video'>
+            <iframe width="600" height="315" src="https://www.youtube.com/embed/7NKR1wELy1M?si=Ol7qRRInDnYDStd9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
       </main>
+      <footer className='footer'>
+        <p>© 2024 Tech do Bem. Todos os direitos reservados.</p>
+      </footer>
     </div>
   )
 }

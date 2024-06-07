@@ -4,14 +4,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
-
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
 
 function LoginPage() {
 
-  function AbrirModal() {
-    new bootstrap.Modal("#modal").show();
-  }
+  const [EmailValue, setEmailValue] = useState('');
+  const [PasswordValue, setPasswordValue] = useState('');
+
+  const handleButtonClick = () => {
+    setEmailValue('');
+    setPasswordValue('');
+  };
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function toggleMenu() {
     const nav = document.getElementById('nav-menu');
@@ -20,12 +32,11 @@ function LoginPage() {
 
   return (
     <>
-
       <nav>
         <div className="nav-div">
-          <div className="Titulo-Nav">Nav</div>
+          <div className="Titulo-Nav">Tech do Bem</div>
           <div className="menu-nav" id="nav-menu">
-          <button id="btn-menu" onClick={toggleMenu}>Menu
+            <button id="btn-menu" onClick={toggleMenu}>Menu
               <span id="hamburguer" />
             </button>
             <ul>
@@ -37,7 +48,7 @@ function LoginPage() {
           </div>
         </div>
       </nav>
-      <main>
+      <main className='main-footer'>
         <div>
           <div className="titulo-login">
             <h1>Login</h1>
@@ -48,7 +59,7 @@ function LoginPage() {
                 <label htmlFor="inputEmail4" className="form-label">
                   Email
                 </label>
-                <input type="email" className="form-control" id="inputEmail4" />
+                <input type="email" className="form-control" id="inputEmail4" value={EmailValue} onChange={e => setEmailValue(e.target.value)} />
               </div>
               <div className="col-md-6 mt-2">
                 <label htmlFor="inputPassword4" className="form-label">
@@ -58,103 +69,66 @@ function LoginPage() {
                   type="password"
                   className="form-control"
                   id="inputPassword4"
+                  value={PasswordValue} onChange={e => setPasswordValue(e.target.value)}
+
                 />
               </div>
-              <button type="button" className="btn btn-primary mt-2" id="btnEntrar">
+              <button type="button" className="btn btn-primary mt-2" id="btnEntrar"
+                onClick={handleButtonClick}>
                 Entrar
               </button>
-              <button
-                onclick="AbrirModal()"
-                type="button"
-                className="btn btn-secondary mt-2"
-                id="btnCadastrar"
-              >
+              <Button variant="secondary" id="btnCadastrar" onClick={handleShow}>
                 Cadastre-se
-              </button>
+              </Button>
               <GoogleLogin
-                    onSuccess={credentialResponse => {
-                      const decoded = jwtDecode(credentialResponse.credential);
-                      console.log(decoded);
-                    }}
-                    onError={() => {
-                      console.log('Login Failed');
-                    }}
-                  />
+                onSuccess={credentialResponse => {
+                  const decoded = jwtDecode(credentialResponse.credential);
+                  console.log(decoded);
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
             </form>
           </div>
-          <div
-            className="modal fade"
-            id="modal"
-            tabIndex={-1}
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">
-                    Cadastre-se
-                  </h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Cadastrar</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>Endereço de Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="name@example.com"
+                    autoFocus
                   />
-                </div>
-                <div className="modal-body">
-                  <form>
-                    <div className="mb-3">
-                      <label htmlFor="inputEmail5" className="form-label">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="inputEmail5"
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="inputPassword5" className="form-label">
-                        Senha
-                      </label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="inputPassword5"
-                      />
-                    </div>
-                  </form>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Fechar
-                  </button>
-                  <button type="button" className="btn btn-primary">
-                    Cadastrar
-                  </button>
-                </div>
-                <div>
-                  <GoogleLogin
-                    onSuccess={credentialResponse => {
-                      const decoded = jwtDecode(credentialResponse.credential);
-                      console.log(decoded);
-                    }}
-                    onError={() => {
-                      console.log('Login Failed');
-                    }}
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>Senha</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Digite sua senha"
+                    autoFocus
                   />
-                </div>
-                <div id="buttonDiv" />
-              </div>
-            </div>
-          </div>
+                </Form.Group>
+              </Form>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Fechar
+              </Button>
+              <Button variant="primary" onClick={handleClose}>
+                Cadastrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </main>
+      <footer className='footer'>
+        <p>© 2024 Tech do Bem. Todos os direitos reservados.</p>
+      </footer>
 
 
     </>

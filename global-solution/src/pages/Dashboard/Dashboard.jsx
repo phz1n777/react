@@ -18,7 +18,7 @@ function Dashboard() {
     <div className="body-dashboard">
       <nav>
         <div className="nav-div">
-          <div className="Titulo-Nav">Nav</div>
+          <div className="Titulo-Nav">Tech do Bem</div>
           <div className="menu-nav" id="nav-menu">
             <button id="btn-menu" onClick={toggleMenu}>Menu
               <span id="hamburguer" />
@@ -93,6 +93,9 @@ function Dashboard() {
         </div>
 
       </section>
+      <footer style={{ backgroundColor: '#457b9d', padding: '20px', textAlign: 'center', color:'white' }}>
+      <p>© 2024 Tech do Bem. Todos os direitos reservados.</p>
+    </footer>
     </div>
   );
 }
