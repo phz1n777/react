@@ -83,7 +83,7 @@ function Dashboard() {
             <div className="feed-single">
               <div className="feed-text">
                 <Bell />
-                <span>Aumento no Nivel de Turbidez! </span>
+                <span>Aumento no Nivel de Lux! </span>
               </div>
               <div className="feed-time">
                 <h3>5 minutos atrás</h3>
