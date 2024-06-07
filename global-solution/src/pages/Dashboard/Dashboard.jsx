@@ -65,8 +65,8 @@ function Dashboard() {
             </div>
             <div className="box-info-single" style={{ backgroundColor: "#79d1ff" }}>
               <div className="info-text">
-                <h3>Nivel de Turbidez </h3>
-                <p>1,000</p>
+                <h3>Nivel de Lux </h3>
+                <p>244 Lux</p>
               </div>
               <Sun />
             </div>
@@ -74,7 +74,7 @@ function Dashboard() {
             <div className="box-info-single" style={{ backgroundColor: "#3ce9bb" }}>
               <div className="info-text">
                 <h3>Nivel da Água</h3>
-                <p>7 metros</p>
+                <p>4.2 metros</p>
               </div>
               <Waves />
             </div>
